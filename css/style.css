@@ -1,0 +1,408 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+section {
+    height: 630px;
+    margin-top: 3rem;
+}
+
+.inner {
+    display: flex;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 1010px;
+    height: 630px;
+    gap: 10px;
+}
+
+/* left */
+.left {
+    width: 603px;
+    position: relative;
+}
+
+.left .img1 {
+    width: 603px;
+    height: 546px;
+}
+
+.left .img2 {
+    position: absolute;
+    right: 8%;
+    top: 8%;
+}
+
+/* right */
+.right {
+    width: 100%;
+}
+.right hr {
+    margin: 13px 0;
+}
+
+/* heading */
+
+.right .top {
+    display: flex;
+    position: relative;
+}
+
+.right .heading {
+    font-weight: 300;
+    font-family: Roboto;
+    font-size: 36px;
+    color: rgb(244, 121, 32);
+    font-style: normal;
+}
+
+.right .heading sup {
+    position: relative;
+    top: 8px;
+}
+
+.right .top figure {
+    position: absolute;
+    right: 0;
+    bottom: -48px;
+}
+
+/* star */
+.right .stars_con {
+    display: flex;
+    align-items: center;
+}
+
+.right .stars_con .star {
+    width: 97px;
+    height: 25px;
+}
+
+.right .stars_con .star_para {
+    font-weight: 400;
+    font-family: Roboto;
+    font-size: 14px;
+    color: rgb(114, 114, 114);
+    font-style: normal;
+}
+
+/* grid 3 row */
+.right .grid3row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+}
+
+.right .grid3row .one {
+    display: inline-flex;
+    flex-direction: column;
+    width: min-content;
+}
+
+.right .grid3row .one .top {
+    font-family: Roboto;
+    font-weight: 400;
+    width: min-content;
+    font-style: normal;
+    font-size: 50px;
+    color: rgb(244, 121, 32);
+}
+.right .grid3row .one .bottom {
+    font-weight: 300;
+    font-family: Roboto;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    font-style: normal;
+    position: relative;
+    left: 30px;
+    bottom: 10px;
+}
+
+.right .grid3row .two {
+    font-family: Roboto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 36px;
+    color: rgb(184, 184, 184);
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.right .grid3row .three {
+    background-color: #febc18;
+    height: 31px;
+    width: 151px;
+    position: relative;
+    padding: 2px 5px;
+}
+
+.right .grid3row .three .gleft {
+    color: rgb(0, 0, 0);
+    font-style: normal;
+}
+.right .grid3row .three .gright {
+    font-size: 22px;
+}
+
+/* grid 3 row2 */
+.right .grid3row2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: end;
+    gap: 20px;
+}
+
+.right .grid3row2 .one {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.right .grid3row2 .one .top {
+    font-weight: 300;
+    font-family: Roboto;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+}
+
+.right .grid3row2 .one .bottom {
+    font-weight: 300;
+    font-family: Roboto;
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    position: relative;
+    bottom: 6px;
+}
+
+.right .grid3row2 .orangeb .top {
+    color: rgb(244, 121, 32);
+    font-weight: 600 !important;
+}
+
+.right .grid3row2 .orangeb {
+    background: url(https://d9hhrg4mnvzow.cloudfront.net/pages.upwellness.com/combo-salescheckout-page-grplus/cdf15475-cornercheck-orange_101e01e000000000000028.png);
+    background-repeat: no-repeat;
+    background-size: 20%;
+    background-position-x: right;
+    background-position-y: top;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #f47920;
+    border-radius: 0px;
+    width: 143px;
+    text-align: center;
+    height: 55px;
+    display: flex;
+    align-items: center;
+}
+
+.right .grid3row2 .orangeb .top {
+    position: relative;
+    top: 8px;
+}
+
+.right .grid3row2 .orangeb .bottom {
+    position: relative;
+    top: 0;
+}
+
+/* checkbox_con */
+.right .checkbox_con {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.right .checkbox_con .checkbox {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.right .checkbox_con .checkbox .circle {
+    border-radius: 50%;
+    border: 1.6px solid #eee;
+    cursor: pointer;
+    height: 26px;
+    width: 26px;
+}
+
+.right .checkbox_con .checkbox .circle2 {
+    border-radius: 50%;
+    border: 1.6px solid #f47920;
+    background-color: #f47920;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 26px;
+    width: 26px;
+}
+
+.right .checkbox_con .checkbox p {
+    display: inline;
+    font-weight: 300;
+    font-family: Roboto;
+    font-size: 18px;
+}
+
+/* grid3row3 */
+
+.right .grid3row3 {
+    display: block;
+}
+
+.right .grid3row3 .one {
+    font-family: Roboto;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 13.85px;
+}
+.right .grid3row3 .black {
+    color: rgb(0, 0, 0);
+}
+
+.right .grid3row3 .orange {
+    color: rgb(244, 121, 32);
+}
+
+/* btn_con */
+
+.right .btn_con {
+    background: rgb(244, 121, 32);
+    margin-top: 5px;
+    border-radius: 155px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 447px;
+}
+
+.right .btn_con .btn_text {
+    font-weight: 300;
+    font-family: Roboto;
+    font-style: normal;
+    font-size: 28px;
+    color: rgb(255, 255, 255);
+}
+
+/* fee_shipping */
+.right .fee_shipping {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: start;
+    height: 87px;
+    width: 447px;
+    background-color: #fff5dd;
+    margin-top: 1rem;
+}
+
+.right .fee_shipping figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 5px;
+    justify-content: center;
+}
+
+.right .fee_shipping figure:not(:last-child) {
+    border-right: 1px solid #ffcca6;
+}
+
+.right .fee_shipping figure img {
+    max-height: 47px;
+}
+
+.right .card_con {
+    height: 47px;
+    width: 414px;
+}
+
+.right .card_con span {
+    display: flex;
+    align-items: center;
+    height: 47px;
+    padding-left: 14px;
+}
+
+.right .card_con span .img1 {
+    width: 144px;
+    height: 26px;
+}
+.right .card_con span .img2 {
+    width: 19px;
+    height: 26px;
+    margin-left: 4px;
+}
+
+.right .card_con span .text1 {
+    font-family: Roboto;
+    font-weight: 700;
+    font-style: normal;
+    padding-left: 4px;
+}
+.right .card_con span .text2 {
+    font-family: Roboto;
+    font-weight: 300;
+    font-style: normal;
+    padding-left: 4px;
+}
+
+@media screen and (max-width: 600px) {
+    /* center */
+    section {
+        height: 100%;
+        margin-top: 0;
+    }
+    .inner {
+        flex-direction: column;
+        width: 600px;
+        padding: 20px 10px;
+    }
+    .left .img2 {
+        left: 4%;
+    }
+    .right .card_con span,
+    .right .checkbox_con {
+        align-items: center;
+        justify-content: center;
+    }
+    .right .grid3row3 {
+        text-align: center;
+    }
+
+    .right .fee_shipping {
+        margin: 0 auto;
+        margin-top: 3px;
+    }
+    .right .btn_con {
+        margin: 0 auto;
+        margin-top: 10px;
+        width: 100%;
+        height: 70px;
+    }
+    .right .card_con {
+        width: 100%;
+    }
+    .right .fee_shipping {
+        width: 100%;
+        margin-top: 6px;
+    }
+    .right .fee_shipping figure {
+        margin: 8px 0;
+    }
+    .right .fee_shipping figure figcaption {
+        font-size: 14px;
+    }
+    .right .grid3row2 .orangeb .bottom {
+        top: 2px;
+    }
+    /* font size */
+    .right .checkbox_con .checkbox p {
+        font-size: 26px;
+    }
+    .right .grid3row3 .one {
+        font-size: 20px;
+    }
+}

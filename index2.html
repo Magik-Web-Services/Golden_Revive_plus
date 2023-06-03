@@ -1,0 +1,896 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .main_container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            gap: 30px;
+            grid-template-columns: 52% 45%;
+            padding: 40px 0px;
+        }
+
+        img {
+            max-width: 100%;
+
+        }
+
+        .main_container .left {
+            position: relative;
+        }
+
+        .main_container .left img:nth-child(2) {
+            position: absolute;
+            right: 20px;
+            top: 10%;
+        }
+
+        .main_container .left img:first-child {
+            width: 100%;
+        }
+
+        .main_container .right .heading_container h2 {
+            font-size: 36px;
+            font-weight: 300;
+            margin: 0px;
+            color: #f47920;
+        }
+
+        .main_container .right .heading_container p {
+            display: flex;
+            margin: 3px 0 10px 0;
+            gap: 10px;
+            align-items: center;
+            font-size: 14px;
+            color: #777777;
+            font-weight: 400;
+        }
+
+        .main_container .amount_container,
+        .main_container .btn_container {
+            display: flex;
+            gap: 25px;
+            text-align: center;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 1px;
+            padding-bottom: 10px;
+            align-items: center;
+        }
+
+        .main_container .btn_container {
+            padding: 20px 0px;
+            border-bottom: 1px solid #ccc;
+
+        }
+
+        .main_container .amount_container .amount_one h2 {
+            font-size: 50px;
+            margin: 0px;
+            color: #f47920;
+            font-weight: 500;
+        }
+
+        .main_container .amount_container .amount_one p {
+            font-size: 16px;
+            font-weight: 300;
+            color: #000;
+            margin: 0px;
+            text-align: center;
+        }
+
+        .main_container .amount_container .amount_two h3 {
+            color: #b8b8b8;
+            font-size: 36px;
+            margin: 0px;
+            font-weight: 400;
+            text-decoration: line-through;
+        }
+
+        .main_container .amount_container .amount_three p {
+            background: rgba(254, 188, 24, 1);
+            padding: 5px 10px;
+            font-size: 14px;
+            color: #000;
+            margin: 0px;
+            font-weight: 300;
+        }
+
+        .main_container .amount_container .amount_three p span {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .main_container .btn_container p {
+            margin: 0px;
+            font-size: 22px;
+            font-weight: 300;
+            color: #000;
+        }
+
+        .btn_container .btn_one.active p {
+            color: #f47920;
+            font-weight: 500;
+            line-height: 0.9em;
+            padding: 8px;
+            position: relative;
+            border: 2px solid #f47920;
+
+        }
+
+        .btn_container .btn_one.active p span,
+        .btn_container .btn_one p span {
+            font-weight: 300;
+            font-size: 16px;
+            color: #000;
+
+        }
+
+        .btn_container .btn_one.active p:after {
+            content: url(https://d9hhrg4mnvzow.cloudfront.net/pages.upwellness.com/combo-salescheckout-page-grplus/cdf15475-cornercheck-orange_100p00p000000000000028.png);
+            position: absolute;
+            top: 0;
+            right: 0px;
+        }
+
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 25px;
+        }
+
+        input:checked+.slider {
+            background-color: #f47920;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .switch input {
+            display: none;
+        }
+
+        input:checked+.slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 12px;
+            width: 12px;
+            border: 5px solid #e8e9ea;
+            left: 3px;
+
+            bottom: 2px;
+
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        /* .subscribe_btn {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            padding-top: 15px;
+            justify-content: center;
+        }
+
+        .subscribe_btn p {
+            font-size: 20px;
+            font-weight: 500;
+            color: #000;
+            margin: 0;
+        }
+
+        .subscribe_btn p span {
+            color: #f47920;
+        } */
+
+        .offer p {
+            margin: 0px;
+            font-size: 14px;
+            font-weight: 300;
+            color: #000;
+        }
+
+        .offer p:nth-child(2) {
+            border-right: 1px solid #f47b21;
+            border-left: 1px solid #f47b21;
+            padding: 0px 10px;
+        }
+
+        .offer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 10px 2px;
+        }
+
+        .main_container .right a {
+            display: block;
+            background-color: #f47920;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            padding: 20px 0px;
+            font-size: 28px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            border-radius: 50px;
+        }
+
+        .shipping {
+            background-color: #fff5dd;
+            gap: 50px;
+            display: flex;
+            padding: 6px 0px 15px;
+            text-align: center;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        .shipping p,
+        .visa .secure p {
+            margin: 0px;
+            font-size: 14px;
+            font-weight: 300;
+            color: #000;
+        }
+
+        .shipping .col1:nth-child(2) {
+            border-right: 1px solid #f47b21;
+            border-left: 1px solid #f47b21;
+            padding: 0 16px;
+        }
+
+        .visa {
+            display: flex;
+            align-items: center;
+            /* gap: 17px; */
+            padding: 20px 0px;
+            justify-content: center;
+        }
+
+        .visa .secure {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .visa .secure img {
+            width: 10%;
+            height: 10%;
+            object-fit: cover;
+        }
+
+        .visa .secure span {
+            font-weight: 700;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .amount_three img {
+            position: absolute;
+            right: 230px;
+            top: 44px;
+        }
+
+        #1mn,
+        #3mn,
+        #6mn {
+            cursor: pointer;
+        }
+
+        @media(max-width:1199px) {
+            .main_container {
+                grid-template-columns: 100%;
+                padding: 40px;
+            }
+
+            .main_container .right .heading_container h2 {
+                text-align: center;
+            }
+
+            .main_container .right .heading_container p,
+            .main_container .amount_container,
+            .main_container .btn_container {
+                justify-content: center;
+            }
+
+            .btn_container .btn_one.active p {
+                padding: 16px;
+            }
+        }
+
+        @media(max-width:768px) {
+
+            .amount_three img {
+                position: absolute;
+                right: 2px;
+                top: 366px;
+                width: 21%;
+            }
+
+            .main_container .right .heading_container h2 {
+                font-size: 30px;
+            }
+
+            .shipping {
+                gap: 15px;
+            }
+
+            .main_container {
+                padding: 20px 10px;
+            }
+
+            .main_container .left img:nth-child(2) {
+                left: -5px;
+                width: 25%;
+                top: 10%;
+            }
+
+            .main_container .amount_container .amount_one h2 {
+                font-size: 35px;
+            }
+
+            .main_container .amount_container .amount_two h3 {
+                font-size: 30px;
+            }
+
+            .main_container .amount_container,
+            .main_container .btn_container {
+                gap: 15px;
+            }
+
+            .main_container .btn_container p {
+                font-size: 18px;
+            }
+
+            .main_container .right a {
+                padding: 15px 0px;
+            }
+
+            .offer {
+                gap: 7px;
+            }
+
+            .offer p {
+                font-size: 12px;
+            }
+
+            .btn_container .btn_one.active p {
+                padding: 10px;
+            }
+        }
+    </style>
+    <style>
+        .checkbox_con {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .checkbox_con .checkbox {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .checkbox_con .checkbox .circle {
+            border-radius: 50%;
+            border: 1.6px solid #eee;
+            cursor: pointer;
+            height: 26px;
+            width: 26px;
+            z-index: 2;
+        }
+
+        .checkbox .circle2 {
+            border-radius: 50%;
+            border: 1.6px solid #f47920;
+            background-color: #f47920;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 26px;
+            width: 26px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+
+    <script src="https://live.upwellness.com/services/scripts/jquery/jquery.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <section>
+        <div class="main_container">
+            <div class="left">
+                <img src="https://d9hhrg4mnvzow.cloudfront.net/pages.upwellness.com/combo-salescheckout-page-grplus/cd55c972-extracted-gr-hero-pill-turmeric_10gr0f6000000000000028.png"
+                    alt="">
+                <img src="https://d9hhrg4mnvzow.cloudfront.net/pages.upwellness.com/combo-salescheckout-page-grplus/b659deb6-new-60dayguarantee-350593804_103a03b000000000000028.png"
+                    alt="">
+            </div>
+            <div class="right">
+                <div class="heading_container">
+                    <h2>Golden Revive +®</h2>
+                    <p> <img src="https://d9hhrg4mnvzow.cloudfront.net/pages.upwellness.com/combo-salescheckout-page-grplus/50b06592-pf-266e1b68-fivestarsoriginal_102u00u02p00p003003028.png"
+                            alt=""> +1300 reviews </p>
+                </div>
+                <div class="amount_container">
+                    <div class="amount_one">
+                        <h2 class="txt1">$49.95</h2>
+                        <p>Per Bottle</p>
+                    </div>
+                    <div class="amount_two">
+                        <h3 class="gpr">$69.95</h3>
+                    </div>
+                    <div class="amount_three">
+
+                        <img
+                            src="https://d9hhrg4mnvzow.cloudfront.net/pages.upwellness.com/combo-salescheckout-page-grplus/2faffea5-freeshipping-starburst-green_1031032000000000000028.png">
+
+                        <p>You Save <span>$99</span></p>
+                    </div>
+
+                </div>
+                <div class="btn_container">
+                    <div id="1mn" class="btn_one active">
+                        <p>1 MONTH <span>supply</span></p>
+                    </div>
+                    <div id="3mn" class="btn_one">
+                        <p>3 MONTH <span>supply</span></p>
+                    </div>
+                    <div id="6mn" class="btn_one">
+                        <p>6 MONTH <span>supply</span></p>
+                    </div>
+
+                </div>
+                <!--  -->
+                <div class="checkbox_con">
+                    <div class="checkbox">
+                        <label class="circle circle2" for="tab2">
+                            <img src="http://d9hhrg4mnvzow.cloudfront.net/pages.upwellness.com/combo-salescheckout-page-grplus/b52443b0-white-check_100f00c000000000000028.png"
+                                alt="check">
+
+                        </label>
+
+                        <input type="radio" id="tab2" name="tab" class="hidden" checked>
+                        <p> One time purchase </p>
+                    </div>
+                    <div class="checkbox">
+                        <label class="circle " for="tab1">
+                            <img src="http://d9hhrg4mnvzow.cloudfront.net/pages.upwellness.com/combo-salescheckout-page-grplus/b52443b0-white-check_100f00c000000000000028.png"
+                            alt="check">
+
+                        </label>
+                        <input type="radio" id="tab1" class="hidden" name="tab">
+                        <p> full time purchase </p>
+                    </div>
+                </div>
+                <!-- <div class="subscribe_btn">
+                    <label class="switch">
+                        <input id="tab1" type="checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                    <p>Subscribe & <span>Save More</span></p>
+                </div> -->
+                <div class="offer">
+                    <p id="rs1">54% off on every order </p>
+                    <p id="rs2">Auto ships every 3 months </p>
+                    <p id="rs3">Cancel anytime</p>
+                </div>
+                <a class="buy_now" href="#">Claim Your Discount</a>
+                <div class="shipping">
+                    <div class="col1">
+                        <img src="https://d9hhrg4mnvzow.cloudfront.net/pages.upwellness.com/combo-salescheckout-page-grplus/889511c5-ship-guarantee-autoship-usa-icons-01_101s01u000000000000028.png"
+                            alt="">
+                        <p>Fast Shipping</p>
+                    </div>
+                    <div class="col1">
+                        <img src="https://d9hhrg4mnvzow.cloudfront.net/pages.upwellness.com/combo-salescheckout-page-grplus/e3ed0810-ship-guarantee-autoship-usa-icons-03_101o01p000000000000028.png"
+                            alt="">
+                        <p>60 Day Guarantee</p>
+                    </div>
+                    <div class="col1">
+                        <img src="https://d9hhrg4mnvzow.cloudfront.net/pages.upwellness.com/combo-salescheckout-page-grplus/0120bafd-ship-guarantee-autoship-usa-icons-02_101c01c000000000000028.png"
+                            alt="">
+                        <p> Made in USA</p>
+                    </div>
+
+
+
+                </div>
+                <div class="visa">
+                    <div class="visa_img"> <img
+                            src="https://d9hhrg4mnvzow.cloudfront.net/pages.upwellness.com/combo-salescheckout-page-grplus/9e05a18b-credit-cards-new-250x109-01_104000q000000000000028.png"
+                            alt=""></div>
+                    <div class="secure"> <img
+                            src="https://d9hhrg4mnvzow.cloudfront.net/pages.upwellness.com/combo-salescheckout-page-grplus/ef940f89-lock-01_101l026000000000000028.png"
+                            alt="">
+                        <p><span>SECURE </span> SSL ENCRYPTION</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+</body>
+
+<script>
+    $(document).ready(function () {
+
+
+
+        $('#load_more').click(function () {
+            //$('#lp-pom-root, #lp-pom-root-color-overlay').css("height", "3645px !important");
+            $('#load_more').addClass('hide');
+            $('div#lp-code-2707, #lp-pom-block-2352, #lp-pom-block-2352-color-overlay, #lp-pom-block-2352 .lp-pom-block-content').css("height", "1750px !important");
+            $('#btm_sec').removeClass('hide');
+        });
+
+        function getURLParameter(name) {
+            return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)', 'i').exec(location.search) || [, ""])[1].replace(/\+/g, '%20')) || null
+        }
+
+
+        var v_customField2 = '';
+        var v_eml = getURLParameter('Email');
+        var v_customfield1 = getURLParameter('customField1');
+        var v_customF2 = getURLParameter('customField2');
+        var v_customF4 = getURLParameter('customField4');
+        var v_customField5 = getURLParameter('session_id');
+        //var v_customfield2 = getURLParameter('customField2');
+        var v_customField3 = getURLParameter('customField3');
+        var v_n = getURLParameter('n');
+
+        var vorder_link1 = "https://live.upwellness.com/checkout/cart-grplus-combo-full-exclusive?item=SAI4X071";
+        var vorder_link3 = "https://live.upwellness.com/checkout/cart-grplus-combo-full-exclusive?item=SAI4X070";
+        var vorder_link6 = "https://live.upwellness.com/checkout/cart-grplus-combo-full-exclusive?item=SAI4X068";
+        var vorder_link1r = "https://live.upwellness.com/checkout/cart-grplus-combo-full-exclusive?item=SRAI4X059";
+        var vorder_link3r = "https://live.upwellness.com/checkout/cart-grplus-combo-full-exclusive?item=SRAI4X058";
+        var vorder_link6r = "https://live.upwellness.com/checkout/cart-grplus-combo-full-exclusive?item=SRAI4X056";
+
+        if (v_customfield1 == null || v_customfield1 == undefined) {
+            v_customfield1 = "_ccn";
+            vorder_link1 = vorder_link1 + '&customField1=' + v_customfield1;
+            vorder_link3 = vorder_link3 + '&customField1=' + v_customfield1;
+            vorder_link6 = vorder_link6 + '&customField1=' + v_customfield1;
+            vorder_link1r = vorder_link1r + '&customField1=' + v_customfield1;
+            vorder_link3r = vorder_link3r + '&customField1=' + v_customfield1;
+            vorder_link6r = vorder_link6r + '&customField1=' + v_customfield1;
+
+        }
+
+
+        if (v_customField5 != null) {
+            vorder_link1 = vorder_link1 + '&customField5=' + v_customField5;
+            vorder_link3 = vorder_link3 + '&customField5=' + v_customField5;
+            vorder_link6 = vorder_link6 + '&customField5=' + v_customField5;
+            vorder_link1r = vorder_link1r + '&customField5=' + v_customField5;
+            vorder_link3r = vorder_link3r + '&customField5=' + v_customField5;
+            vorder_link6r = vorder_link6r + '&customField5=' + v_customField5;
+
+        }
+
+        // new script - start
+
+
+
+        const queryString = window.location.search;
+
+
+        var temp = queryString.replace('?', '&');
+
+        var arr = temp.split('&');
+        var newqs = '&';
+
+        for (var c = 0; c < arr.length; c++) {
+            var temp2 = '';
+            var temp2 = arr[c].split('=');
+
+            if (temp2[0] == 'customField1') {
+                if (v_customfield1 != null) {
+                    //vorder_link1 = vorder_link1 + '&customField1=' + v_customfield1 + '_cbt';  
+                    var newqs = newqs + 'customField1=' + v_customfield1 + '_ccn&';
+                } else {
+                    var newqs = newqs + 'customField1=_ccn&';
+                }
+                continue;
+            }
+
+            var newqs = newqs + arr[c];
+            if (c < (arr.length - 1)) {
+                var newqs = newqs + '&';
+            }
+
+        }
+
+        var newqs = newqs.replace('&&', '&');
+        vorder_link1 = vorder_link1 + newqs;
+        vorder_link3 = vorder_link3 + newqs;
+        vorder_link6 = vorder_link6 + newqs;
+        vorder_link1r = vorder_link1r + newqs;
+        vorder_link3r = vorder_link3r + newqs;
+        vorder_link6r = vorder_link6r + newqs;
+        vorder_link6rt = vorder_link6r;
+
+        // new script - end
+
+
+        $('.buy_now').attr('href', vorder_link6rt);
+
+
+
+        // onclick of 1,3,6 months changes class
+        $('#1mn, #3mn, #6mn').click(function () {
+            // $("#lp-pom-image-1839, #lp-pom-image-1840, #lp-pom-image-1841, #lp-pom-image-1842, #lp-pom-image-1843, #lp-pom-image-1846, #lp-pom-image-1847").hide();
+
+            var pUrl = vorder_link1;
+
+
+            var cID = $(this).attr('id');
+
+            $('#1mn, #3mn, #6mn').removeClass('active');
+            $('#' + cID).addClass('active');
+
+            // checkbox check
+
+            if ($('#tab1').is(":checked")) {
+                $('#rs2').css('border-right', '1px solid #f47b21');
+                $('.amount_three img').removeClass('hide');
+                if (cID == '1mn') {
+                    var pUrl = vorder_link1r;
+                    $('.txt6 span').html('Auto ships every month');
+                    $('.amount_one .txt1').html('$44.95');
+                    //$('.amount_one .txt3').html('1 Bottle');
+                    $('.btn.buy_now .txt4').html('$44.95');
+                    $('.amount_three span').html('$25');
+                    $('.amount_two .gpr').html('$69.95');
+                    $('#rs1').html('36% Off on every order');
+                    $('#rs2').html('Auto ships every month');
+                    $('#rs3').removeClass('hide');
+                    // $("#lp-pom-image-1950 img, #lp-pom-image-2164 img").attr("srcset", "https://d2v0zca148vb4j.cloudfront.net/checkout/images/1bottle_15_70_RT_gr_turmeric.png");
+                } else if (cID == '3mn') {
+                    var pUrl = vorder_link3r;
+                    $('.txt6 span').html('Auto ships every 3 months');
+                    $('.amount_one .txt1').html('$34.95');
+                    $('.amount_one .txt3').html('3 Bottles');
+                    $('.btn.buy_now .txt4').html('$104.85');
+                    $('.amount_three span').html('$125');
+                    $('.amount_two .gpr').html('$209.85');
+                    $('#rs1').html('50% Off on every order');
+                    $('#rs2').html('Auto ships every 3 months');
+                    $('#rs3').removeClass('hide');
+                    // $("#lp-pom-image-1950 img, #lp-pom-image-2164 img").attr("srcset", "https://d2v0zca148vb4j.cloudfront.net/checkout/images/3bottle_79_50_RT_gr_turmeric.png");
+                } else if (cID == '6mn') {
+                    var pUrl = vorder_link6r;
+                    $('.txt6 span').html('Auto ships every 6 months');
+                    $('.amount_one .txt1').html('$24.95');
+                    $('.amount_one .txt3').html('6 Bottles');
+                    $('.btn.buy_now .txt4').html('$149.70');
+                    $('.amount_three span').html('$270');
+                    $('.amount_two .gpr').html('$419.70');
+                    $('#rs1').html('64% off on every order');
+                    $('#rs2').html('Auto ships every 6 months');
+                    $('#rs3').removeClass('hide');
+                    // $("#lp-pom-image-1950 img, #lp-pom-image-2164 img").attr("srcset", "https://d2v0zca148vb4j.cloudfront.net/checkout/images/6bottle_223_80_RT_gr_turmeric.png");
+                }
+            } else {
+                $('.txt6 span').html('This is a one-time payment');
+                $('#rs2').css('border-right', '0px');
+                $('.amount_three img').addClass('hide');
+                if (cID == '1mn') {
+                    var pUrl = vorder_link1;
+                    $('.amount_one .txt1').html('$49.95');
+                    $('.btn.buy_now .txt4').html('$49.95');
+                    $('.amount_three span').html('$20');
+                    $('.amount_two .gpr').html('$69.95');
+                    $('.amount_one .txt3').html('1 Bottle');
+                    $('#rs1').html('29% Off on every order');
+                    $('#rs2').html('Fast, reliable shipping');
+                    $('#rs3').addClass('hide');
+                    $('#rs2').style('border-right', '0px');
+                    // $("#lp-pom-image-1950 img, #lp-pom-image-2164 img").attr("srcset", "https://d2v0zca148vb4j.cloudfront.net/checkout/images/1bottle_10_RT_gr_turmeric.png");
+
+                } else if (cID == '3mn') {
+                    var pUrl = vorder_link3;
+                    $('.amount_one .txt1').html('$39.95');
+                    $('.btn.buy_now .txt4').html('$119.85');
+                    $('.amount_three span').html('$90');
+                    $('.amount_two .gpr').html('$209.85');
+                    $('.amount_one .txt3').html('3 Bottles');
+                    $('#rs1').html('43% Off on every order');
+                    $('#rs2').html('Fast, reliable shipping');
+                    $('#rs3').addClass('hide');
+                    // $("#lp-pom-image-1950 img, #lp-pom-image-2164 img").attr("srcset", "https://d2v0zca148vb4j.cloudfront.net/checkout/images/3bottle_66_RT_gr_turmeric.png");
+
+                } else if (cID == '6mn') {
+                    var pUrl = vorder_link6;
+                    $('.amount_one .txt1').html('$29.95');
+                    $('.btn.buy_now .txt4').html('$179.70');
+                    $('.amount_three span').html('$240');
+                    $('.amount_two .gpr').html('$419.70');
+                    $('.amount_one .txt3').html('6 Bottles');
+                    $('#rs1').html('57% Off on every order');
+                    $('#rs2').html('Fast, reliable shipping');
+                    $('#rs3').addClass('hide');
+                    // $("#lp-pom-image-1950 img, #lp-pom-image-2164 img").attr("srcset", "https://d2v0zca148vb4j.cloudfront.net/checkout/images/6bottle_204_RT_gr_turmeric.png");
+                }
+            }
+            $('.buy_now').attr('href', pUrl);
+        });
+
+
+        // select subscription
+
+        $('#tab1').click(function () {
+
+            var pUrl = vorder_link1r;
+
+            // checkbox check
+            var cID = $('.btn_container .btn_one.active').attr('id');
+
+            console.log(cID);
+
+            $("#tab1").prev().addClass("circle2");
+            $("#tab2").prev().removeClass("circle2");
+
+
+            if ($('#tab1').is(":checked")) {
+                console.log('checked');
+                $('#rs2').css('border-right', '1px solid #f47b21');
+                $('.amount_three img').removeClass('hide');
+                if (cID == '1mn') {
+                    var pUrl = vorder_link1r;
+                    $('.txt6 span').html('Auto ships every month');
+                    $('.amount_one .txt1').html('$44.95');
+                    $('.amount_one .txt3').html('1 Bottle');
+                    $('.btn.buy_now .txt4').html('$44.95');
+                    $('.amount_three span').html('$25');
+                    $('.amount_two .gpr').html('$69.95');
+                    $('#rs1').html('36% Off on every order');
+                    $('#rs2').html('Auto ships every month');
+                    $('#rs3').removeClass('hide');
+                    // $("#lp-pom-image-1950 img, #lp-pom-image-2164 img").attr("srcset", "https://d2v0zca148vb4j.cloudfront.net/checkout/images/1bottle_15_70_RT_gr_turmeric.png");
+
+                } else if (cID == '3mn') {
+                    var pUrl = vorder_link3r;
+                    $('.txt6 span').html('Auto ships every 3 months');
+                    $('.amount_one .txt1').html('$34.95');
+                    $('.amount_one .txt3').html('3 Bottles');
+                    $('.btn.buy_now .txt4').html('$104.85');
+                    $('.amount_three span').html('$125');
+                    $('.amount_two .gpr').html('$209.85');
+                    $('#rs1').html('50% Off on every order');
+                    $('#rs2').html('Auto ships every 3 months');
+                    $('#rs3').removeClass('hide');
+                    // $("#lp-pom-image-1950 img, #lp-pom-image-2164 img").attr("srcset", "https://d2v0zca148vb4j.cloudfront.net/checkout/images/3bottle_79_50_RT_gr_turmeric.png");
+
+                } else if (cID == '6mn') {
+                    var pUrl = vorder_link6r;
+                    $('.txt6 span').html('Auto ships every 6 months');
+                    $('.amount_one .txt1').html('$24.95');
+                    $('.amount_one .txt3').html('6 Bottles');
+                    $('.btn.buy_now .txt4').html('$149.70');
+                    $('.amount_three span').html('$270');
+                    $('.amount_two .gpr').html('$419.70');
+                    $('#rs1').html('64% off on every order');
+                    $('#rs2').html('Auto ships every 6 months');
+                    $('#rs3').removeClass('hide');
+                    // $("#lp-pom-image-1950 img, #lp-pom-image-2164 img").attr("srcset", "https://d2v0zca148vb4j.cloudfront.net/checkout/images/6bottle_223_80_RT_gr_turmeric.png");
+                }
+            }
+            $('.buy_now').attr('href', pUrl);
+        });
+
+        $('#tab2').click(function () {
+
+            var pUrl = vorder_link1r;
+
+            // checkbox check
+            var cID = $('.btn_container .btn_one.active').attr('id');
+
+            console.log(cID);
+
+            $("#tab2").prev().addClass("circle2");
+            $("#tab1").prev().removeClass("circle2");
+            $(".hidden2").attr('checked', true);
+
+            if ($('#tab2').is(":checked")) {
+                $('.txt6 span').html('This is a one-time payment');
+                $('#rs2').css('border-right', '0px');
+                $('.amount_three img').addClass('hide');
+                if (cID == '1mn') {
+                    var pUrl = vorder_link1;
+                    $('.amount_one .txt1').html('$49.95');
+                    $('.btn.buy_now .txt4').html('$49.95');
+                    $('.amount_three span').html('$20');
+                    $('.amount_two .gpr').html('$69.95');
+                    $('.amount_one .txt3').html('1 Bottle');
+                    $('#rs1').html('29% Off on every order');
+                    $('#rs2').html('Fast, reliable shipping');
+                    $('#rs3').addClass('hide');
+                    // $("#lp-pom-image-1950 img, #lp-pom-image-2164 img").attr("srcset", "https://d2v0zca148vb4j.cloudfront.net/checkout/images/1bottle_10_RT_gr_turmeric.png");
+
+                } else if (cID == '3mn') {
+                    var pUrl = vorder_link3;
+                    $('.amount_one .txt1').html('$39.95');
+                    $('.btn.buy_now .txt4').html('$119.85');
+                    $('.amount_three span').html('$90');
+                    $('.amount_two .gpr').html('$209.85');
+                    $('.amount_one .txt3').html('3 Bottles');
+                    $('#rs1').html('43% Off on every order');
+                    $('#rs2').html('Fast, reliable shipping');
+                    $('#rs3').addClass('hide');
+                    // $("#lp-pom-image-1950 img, #lp-pom-image-2164 img").attr("srcset", "https://d2v0zca148vb4j.cloudfront.net/checkout/images/3bottle_66_RT_gr_turmeric.png");
+
+                } else if (cID == '6mn') {
+                    var pUrl = vorder_link6;
+                    $('.amount_one .txt1').html('$29.95');
+                    $('.btn.buy_now .txt4').html('$179.70');
+                    $('.amount_three span').html('$240');
+                    $('.amount_two .gpr').html('$419.70');
+                    $('.amount_one .txt3').html('6 Bottles');
+                    $('#rs1').html('57% Off on every order');
+                    $('#rs2').html('Fast, reliable shipping');
+                    $('#rs3').addClass('hide');
+                    // $("#lp-pom-image-1950 img, #lp-pom-image-2164 img").attr("srcset", "https://d2v0zca148vb4j.cloudfront.net/checkout/images/6bottle_204_RT_gr_turmeric.png");
+                }
+            }
+
+        })
+
+
+
+        $("#6mn").trigger("click");
+    });
+</script>
+
+
+</html>
